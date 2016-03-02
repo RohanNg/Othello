@@ -81,7 +81,7 @@ navigation section
   vertical-align: top;
 }
 .custom-navbar .navbar-left li a  {
-  color: #fff;
+  color: #878b72;
   text-decoration: underline;
   font-size: 30px;
 }
@@ -96,21 +96,21 @@ navigation section
   font-size: 30px;
 }
 .custom-navbar .navbar-right li a {
-    color: #ffffff;
+    color: #878b72;
     font-size: 14px;
     font-weight: 500;
     }
 .custom-navbar .nav li a:hover {
   	background: transparent;
-   color: #66ffcc;
+   color: #e7b99f;
 }
 .custom-navbar .nav > li > a:focus {
   background-color: transparent;
-  color: #ffffff;
+  color: #e7b99f;
   outline: none;
 }
 .custom-navbar .nav li.active > a {
-      color: #ff6400;
+      color: #878b72;
     }
 .custom-navbar .navbar-toggle {
         border: none;
@@ -133,11 +133,16 @@ navigation section
         }
 }
 
+#main, #Oth-map {
+  padding: 30px;
+}
 
 /* ==========================================================================
 header section
 ========================================================================== */
 #header {
+  background: url(../images/background_header-contact.jpg) no-repeat top center;
+  background-size: cover !important;
   overflow: hidden;
   background-position: center;
   color: #ffffff;
@@ -150,31 +155,22 @@ header section
   height: 100vh;
   text-align: center;
 }
-#header::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: url(../images/background_header.jpg) no-repeat top center;
-  background-size: cover !important;
-  opacity: .7;
-}
+
 #header h1 {
   font-size: 80px;
   font-weight: bolder;
   opacity: 1;
-  color: #ff6a33;
+  color: #878b72;
 }
 #header h4 {
   font-family: Sans-Serif;
   font-size: 30px;
-  font-weight: 200;  
+  font-weight: 200;
+  color: #666;  
 }
 #header .fa{
   font-size: 25px;
+  color: #666;
 }
 
 #header .line {
@@ -186,7 +182,7 @@ header section
 #header .line-right {
   width: 42%;
   margin-bottom: 5px;
-  border: 2px solid #fff;
+  border: 2px solid #666;
   display: inline-block;
 }
 #header .line-left {
@@ -194,4 +190,117 @@ header section
 }
 #header .line-right {
   left:58%;
+}
+
+/* ==========================================================================
+main section - left side
+========================================================================== */
+#main .left-side ul {
+  list-style: none;
+  margin-left: -30px;
+  letter-spacing: 2px;
+}
+#main .left-side h2 {
+  text-transform: uppercase;
+  color: #e7b99f;
+  font-weight: bolder;
+}
+#main .left-side ul.Oth-address li{
+  font-size: 18px;
+}
+#main .left-side ul.Oth-address li:first-child {
+  margin-top: 20px;
+}
+
+/* ==========================================================================
+main section - Contact
+========================================================================== */
+#main .right-side h2 {
+  text-transform: uppercase;
+  color: #878b72;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#main .right-side strong {
+  text-transform: uppercase;
+  position: relative;
+  letter-spacing: 1px;
+}
+#main .right-side .form-control,
+#main .right-side .send-button {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: none;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  resize: none;
+}
+#main .right-side .form-control{
+  font-style: italic;
+}
+#main .right-side input {
+  height: 30px;
+}
+#main .right-side input[type="submit"] {
+  background: #d6d7c5;
+  border: 3px solid #d6d7c5;
+  letter-spacing: 3px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 18px;
+  width: 100%;
+  height: 40px;
+  color: #ffffff;
+}
+#main .right-side input[type="submit"]:hover {
+  color: #6600cc;
+}
+
+/* ==========================================================================
+Map section
+========================================================================== */
+#Oth-map {
+  background: url(../images/Othello-map-brando.jpg) no-repeat top center;
+  background-size: 100% !important;
+  overflow: hidden;
+  background-position: center;
+  color: #ffffff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 400px;
+}
+
+/* ==========================================================================
+footer section
+========================================================================== */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #444;
+  color: #6a6a6a; 
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+footer .copyright {
+  margin: 0;
+  padding: 0;
+}
+footer .copyright li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    line-height: 24px;
+}
+.ie footer .copyright li {
+   display: inline;
+}
+footer .copyright li:before {
+    content: "\2022";
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #f60;
+}
+footer .copyright li:first-child:before {
+  display: none;
 }
