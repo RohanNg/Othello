@@ -80,6 +80,7 @@ navigation section
   float: none;
   vertical-align: top;
 }
+
 .custom-navbar .navbar-left li a  {
   color: #878b72;
   text-decoration: underline;
@@ -100,6 +101,13 @@ navigation section
     font-size: 14px;
     font-weight: 500;
     }
+.custom-navbar .navbar-lang {
+  padding-left: 30px;
+}
+.custom-navbar .navbar-lang li a{
+  padding-left: 5px;
+  padding-right: 5px;
+}
 .custom-navbar .nav li a:hover {
   	background: transparent;
    color: #e7b99f;
