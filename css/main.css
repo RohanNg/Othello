@@ -148,7 +148,7 @@ Facebook Widget section
 .theblogwidgets{
     background: url("http://3.bp.blogspot.com/-TaZRLv66f8g/UoMnTyTbF6I/AAAAAAAAAGY/U4qcf-SP6d0/TheBlogWidgets_facebook_widget.png") no-repeat scroll left center transparent !important;
     float: right;
-    height: 270px;
+    height: 470px;
     padding: 0 5px 0 46px;
     width: 295px;
     z-index: 999;
@@ -162,24 +162,7 @@ Facebook Widget section
     border:4px solid  #3b5998;
     background:#fafafa;
   }
-  .theblogwidgets span{
-    bottom: 4px;
-    font: 8px "lucida grande",tahoma,verdana,arial,sans-serif;
-    position: absolute;
-    right: 6px;
-    text-align: right;
-    z-index: 999;
-  } 
-  .theblogwidgets span a{
-    color: gray;
-    text-decoration:none;
-  }
-  .theblogwidgets span a:hover{
-    text-decoration:underline;
-  } 
-
-
-/* ==========================================================================
+ /* ==========================================================================
 footer section
 ========================================================================== */
 footer {
