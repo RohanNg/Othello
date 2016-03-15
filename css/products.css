@@ -1,0 +1,74 @@
+#products {
+	padding:0%;
+}
+
+/* nav div a:hover, nav div a:focus {
+text-decoration: none;
+color: #ff8000;
+} */
+
+.carousel-inner > .item > img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
+
+.carousel-caption h3 {
+      color: #000 !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  } 
+ 
+ #itemListNav{
+margin: 1% 32% 1% 27%;
+ }
+.category {
+	padding:2%;
+}
+
+#tab-content {
+  padding:0px;
+}
+
+/* Add a dark gray background color to the modal header and center text */
+.modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal-header, .modal-body {
+    padding: 40px 50px;
+}
+
+.btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;  
+  }
+/*.item-list {
+	border: 1px solid transparent;
+	padding: 0px;
+}
+.item-list:hover {
+      border-color: #f1f1f1;
+    } */
+/*footer {
+text-align: center;
+font-size:70%;
+padding: 0%;
+color: #6b777e;
+}
+
+footer p{
+margin-bottom: 1%;
+}
+
+footer hr{
+width: 25%;
+margin-top: 0.5%;
+margin-bottom: 0.5%;
+}*/
