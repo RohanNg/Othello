@@ -13,3 +13,11 @@ $(window).scroll(function() {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
     }
 });
+
+// Floating Facebook Widget by www.TheBlogWidgets.com START
+/*<![CDATA[*/ 
+jQuery(document).ready(function() {
+    jQuery(".theblogwidgets").hover(function() {
+        jQuery(this).stop().animate({right: "0"}, "medium");}, function() {
+            jQuery(this).stop().animate({right: "-250"}, "medium");}, 500);}); 
+/*]]>*/
