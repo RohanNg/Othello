@@ -8,7 +8,7 @@ include_once("config.php");
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>View shopping cart</title>
-	<link href="css/cart/style.css" rel="stylesheet" type="text/css">
+	<link href="css/cart.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<h1 align="center">View Cart</h1>
