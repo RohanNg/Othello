@@ -52,7 +52,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
          <li class="header-logo"><a href="#">OTHELLO</a></li>
        </ul>
        <ul class="nav navbar-nav navbar-right">
-         <li><a href="#" class="smoothScroll"><span class="glyphicon glyphicon-shopping-cart"> CART</span></a></li>         
+         <li><a href="view_cart.php" class="smoothScroll"><span class="glyphicon glyphicon-shopping-cart"> CART</span></a></li>         
        </ul>
        <ul class="nav navbar-nav navbar-right navbar-lang">
          <li><a href="#" class="smoothScroll">FIN</a></li>
@@ -181,49 +181,44 @@ EOT;
 <?php
 $item_modal = "";
 for( $x = 1; $x <= 4; $x++){
-        $query = "SELECT product_code, product_name, product_img_path FROM cake_category_".$x." ORDER BY id ASC";
+        $query = "SELECT product_code, product_name, product_description, product_img_path, product_price FROM cake_category_".$x." ORDER BY id ASC";
         $results = $mysqli->query($query); 
         if($results) {
           while($obj = $results->fetch_object()){
             $item_modal .= <<<EOT
 
-            <!-- Modal of {$obj->product_code} -->
-            <div class="modal fade" id="{$obj->product_code}" role="dialog">
-              <div class="modal-dialog">
+<!-- Modal of {$obj->product_code} -->
+<div class="modal fade" id="{$obj->product_code}" role="dialog">
+  <div class="modal-dialog">
 
-              <!-- Modal content of {$obj->product_code}-->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">{$obj->product_name}</h4>
-                  </div>
-                  <div class="modal-body">
-                    <img src="{$obj->product_img_path}" alt="{$obj->product_name}" width="100%"/>
-                    <p>Description ... </p>
-                    <hr/>
-                    <form role="form">
-                      <div class="form-group">
-                        <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> {$obj->product_name}, price</label>
-                        <input type="number" class="form-control" id="quantity" placeholder="How many?">
-                      </div>
-                      <div class="form-group">
-                        <label for="usrname"><span class="glyphicon glyphicon-user"></span>Your address</label>
-                        <input type="text" class="form-control" id="usraddress" placeholder="Enter address">
-                      </div>
-                      <button type="submit" class="btn btn-block">Confirm
-                        <span class="glyphicon glyphicon-ok"></span>
-                      </button>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
-                      <span class="glyphicon glyphicon-remove"></span> Cancel
-                    </button>
-                    <p>Need <a href="#">help?</a></p>
-                  </div>
-                </div>      
-              </div>
-            </div>
+    <!-- Modal content of {$obj->product_code}-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{$obj->product_name}</h4>
+      </div>
+      <div class="modal-body">
+        <img src="{$obj->product_img_path}" alt="{$obj->product_name}" width="100%"/>
+        <p>Description ...{$obj->product_description} </p>
+        <hr/>
+        <form role="form" method="POST" action="cart_update.php">
+          <input type="hidden" name="product_code" value="{$obj->product_code}" />
+          <input type="hidden" name="type" value="add" />
+          <input type="hidden" name="return_url" value="{$current_url}" />
+          <input type="hidden" name="product_name" value="{$obj->product_name}" />
+          <input type="hidden" name="product_price" value="{$obj->product_price}" />
+          <div class="form-group">
+            <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> {$obj->product_name}, price</label>
+            <input type="number" class="form-control" id="quantity" name="product_quantity" placeholder="How many?" />
+          </div>
+          <button type="submit" class="btn btn-block">Confirm
+            <span class="glyphicon glyphicon-ok"></span>
+          </button>
+        </form>
+      </div>
+    </div>      
+  </div>
+</div>
 EOT;
           }
         }
@@ -256,3 +251,41 @@ echo $item_modal;
 </body>
 </html>
 
+<!-- Modal of {$obj->product_code} -->
+<div class="modal fade" id="{$obj->product_code}" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content of {$obj->product_code}-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{$obj->product_name}</h4>
+      </div>
+      <div class="modal-body">
+        <img src="{$obj->product_img_path}" alt="{$obj->product_name}" width="100%"/>
+        <p>Description ... </p>
+        <hr/>
+        <form role="form" method="POST" action="cart_update.php">
+          <input type="hidden" name="product_code" value="{$obj->product_code}" />
+          <input type="hidden" name="type" value="add" />
+          <input type="hidden" name="return_url" value="{$current_url}" />
+          <input type="hidden" name="product_name" value="{$obj->product_name}" />
+          <input type="hidden" name="product_price" value="{$obj->product_price}" />
+          <div class="form-group">
+            <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> {$obj->product_name}, price</label>
+            <input type="number" class="form-control" id="quantity" name="product_quantity" placeholder="How many?" />
+          </div>
+          <button type="submit" class="btn btn-block">Confirm
+            <span class="glyphicon glyphicon-ok"></span>
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"/>
+          <span class="glyphicon glyphicon-remove"></span> Cancel
+        </button>
+        <p>Need <a href="#">help?</a></p>
+      </div>
+    </div>      
+  </div>
+</div>
