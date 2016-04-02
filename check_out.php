@@ -103,7 +103,7 @@ END-->
 			<!-- right side -->
 			<div class="col-md-6 col-sm-6 right-side">
 			<br><br><br>
-				<h2 style="text-align: center;">Send us feedback</h2><br>
+				<h2 style="text-align: center;">Your Information </h2><br>
 				<form action="send_order.php" method="POST" class="wow fadeIn" data-wow-delay="0.2s">
 					<div class="col-md-6 col-sm-6">
 						<label for="name"><strong>Name:</strong></label></label>
