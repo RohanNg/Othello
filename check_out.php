@@ -142,6 +142,7 @@ END-->
 	</div>
 </footer>
 
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="js/jquery-lib.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/smoothscroll.js"></script>
