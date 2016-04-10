@@ -132,17 +132,19 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 
 
   <!-- Item list start!-->
-  <div class="container-fluid text-center">
-    <ul id="itemListNav" class="nav nav-tabs">
-      <div class="row">
-          <li class="col-xs-2"></li>
-          <li class="active category col-xs-2"><a data-toggle="tab" href="#category1">Category #1</a></li>
-          <li class="category col-xs-2"><a data-toggle="tab" href="#category2">Category #2</a></li>
-          <li class="category col-xs-2"><a data-toggle="tab" href="#category3">Category #3</a></li>
-          <li class="category col-xs-2"><a data-toggle="tab" href="#category4">Category #4</a></li>
-          <li class="col-xs-2"></li>
-      </div>
-    </ul>
+    <div class="container-fluid text-center">
+    <div id="itemlist">
+      <ul class="nav nav-tabs">
+        <li class="active category"><a data-toggle="tab" href="#category1">Cakes</a></li>
+        <li class="category"><a data-toggle="tab" href="#category2">Small Cakes</a></li>
+        <li class="category"><a data-toggle="tab" href="#category3">Buns</a></li>
+        <li class="category"><a data-toggle="tab" href="#category4">Bread</a></li>
+        <li class="category"><a data-toggle="tab" href="#category5">Sandwiches & Salad</a></li>
+        <li class="category"><a data-toggle="tab" href="#category6">Wedding cakes</a></li>
+        <li class="category"><a data-toggle="tab" href="#category7">Special cakes</a></li>
+        <li class="category"><a data-toggle="tab" href="#category8">Custom Orders</a></li>
+      </ul>
+    </div>  
 
     <!--Item tab content-->
 
