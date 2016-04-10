@@ -6,7 +6,7 @@ $(window).scroll(function() {
     else {
       $(".navbar-fixed-top").show();
     }
-    if ($(".navbar").offset().top > 650) {
+    if ($(".navbar").offset().top > 500) {
         $(".navbar-fixed-top").show();
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {

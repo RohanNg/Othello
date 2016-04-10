@@ -18,6 +18,8 @@
 	<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:italic' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type='text/javascript'></script>
+	<link href="css/imageviewer.css"  rel="stylesheet" type="text/css" />
+	<script src="js/imageviewer.js"></script>
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
@@ -33,7 +35,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top custom-navbar">
 	<div class = "container">
 
-		<a href = "homepage.html" class = "navbar-brand"><img src="images/logo.jpg"></a>
+		<a href = "homepage.html" class = "navbar-brand"><img src="images/logo.png"></a>
 		<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
 			<span class= "icon-bar"></span>
 			<span class= "icon-bar"></span>
@@ -46,7 +48,7 @@
 			        <li><a href="homepage.html">WELCOME</a></li>
        				<li><a href="about.html">ABOUT</a></li>
         			<li><a href="products.html">PRODUCTS</a></li>
-        			<li><a href="contact.html">CONTACT</a></li>
+        			<li class="active_page"><a href="contact.html">CONTACT</a></li>
         	</ul>
 	</div>
 </div>
@@ -85,7 +87,11 @@
 					<li>Tel. (06) 319 8800</li>
 					<li>Email: info (a) othello-product.fi</li>
 				</ul>
+				<div id="image-gallery-1" class="cf">
+				<img src="images/map.jpg" data-high-res-src="images/map.jpg" alt="" class="gallery-items">
 			</div>
+			</div>
+			
 
 			<!-- right side -->
 			<div class="col-md-6 col-sm-6 right-side">
@@ -116,14 +122,6 @@
 	</div>
 </section>
 
-<!-- map section -->
-<section id="Oth-map">
-	<div class="container">
-		<div class="row">
-		</div>
-	</div>
-</section>
-
 <!-- footer section -->
 <footer>
 	<div class="container">
@@ -145,5 +143,16 @@
 <script src="js/jquery.backstretch.min.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
+<script type="text/javascript">
+	$(function () {
+		var viewer = ImageViewer();
+		$('.gallery-items').click(function () {
+			var imgSrc = this.src,
+			highResolutionImage = $(this).data('high-res-img');
+
+			viewer.show(imgSrc, highResolutionImage);
+		});
+	});
+</script>
 </body>
 </html>
