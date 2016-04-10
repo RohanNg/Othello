@@ -36,38 +36,39 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
-  <!-- Facebook plugin 
-  <div class="theblogwidgets" style="">
-    <div>   
-     <iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/pages/Othello/209409135842253/&width=245&colorscheme=light&show_faces=true&border_color=white&connections=9&stream=true&header=false&height=470" scrolling="no" frameborder="0" scrolling="no" style="border: white; overflow: hidden; height: 470px; width: 245px;background:#fafafa;color:000;"></iframe>
-   </div>
- </div>
-  -->
+<div class="theblogwidgets" style="">
+<div>   
+<iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/pages/Othello/209409135842253/&width=245&colorscheme=light&show_faces=true&border_color=white&connections=9&stream=true&header=false&height=470" scrolling="no" frameborder="0" scrolling="no" style="border: white; overflow: hidden; height: 470px; width: 245px;background:#fafafa;color:000;"></iframe>
+</div>
+</div>
 
  <!-- navigation section -->
- <section class="navbar navbar-fixed-top custom-navbar" role="navigation">
-  <div class="container">
-    <div class="collapse navbar-collapse">
-       <ul class="nav navbar-nav navbar-left">
-         <li class="header-logo"><a href="#">OTHELLO</a></li>
-       </ul>
-       <ul class="nav navbar-nav navbar-right">
-         <li><a href="view_cart.php" class="smoothScroll"><span class="glyphicon glyphicon-shopping-cart"> CART</span></a></li>         
-       </ul>
-       <ul class="nav navbar-nav navbar-right navbar-lang">
-         <li><a href="#" class="smoothScroll">FIN</a></li>
-         <li><a href="#" class="smoothScroll">SWE</a></li>
-         <li><a href="#" class="smoothScroll">ENG</a></li>
-       </ul>
-       <ul class="nav navbar-nav navbar-right">
-         <li><a href="homepage.html" class="smoothScroll">WELCOME</a></li>
-         <li><a href="aboutus.html" class="smoothScroll">ABOUT</a></li>
-         <li><a href="products.html" class="smoothScroll">PRODUCTS</a></li>
-         <li><a href="contact.html" class="smoothScroll">CONTACT</a></li>
-       </ul>
-    </div>
-   </div>
-</section>
+ 
+<div class="navbar navbar-inverse navbar-fixed-top custom-navbar">
+  <div class = "container">
+
+    <a href = "homepage.html" class = "navbar-brand"><img src="images/logo.jpg"></a>
+    <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+      <span class= "icon-bar"></span>
+      <span class= "icon-bar"></span>
+      <span class= "icon-bar"></span>
+      <span class= "icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse navHeaderCollapse">
+      <ul class = "nav navbar-nav navbar-right">
+          <li><a href="homepage.html">WELCOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="products.html">PRODUCTS</a></li>
+              <li><a href="contact.html">CONTACT</a></li>
+              <li><a href="#" class="smoothScroll">FIN</a></li>
+              <li><a href="#" class="smoothScroll">SWE</a></li>
+              <li><a href="#" class="smoothScroll">ENG</a></li>
+              <li><a href="view_cart.php"><span class="glyphicon glyphicon-shopping-cart"> CART</span></a></li>
+          </ul>
+          
+  </div>
+</div>
+</div>
 
 
 <!-- main section -->
