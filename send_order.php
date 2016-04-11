@@ -10,13 +10,18 @@ foreach ($_SESSION["cart_products"] as $cart_itm) {
 }
 $msg .= "</table>";
 
-	$recipient = "innolight1001@gmail.com";
+	$recipient_1 = "innolight1001@gmail.com";
+	$recipient_2 = $_POST("email");
+
 	$subject = "Form submission result";
 	$mail_header = "MIME-Version: 1.0\r\n";
 	$mail_header .= "Content-type: text/html; charset=UTF-8\r\n";
 	$mail_header .= "From: My website <nguyenhaidang@gmail.com> \n"; 
 	$mail_header .= "Reply-To:".$_POST['email'];
-	mail($recipient,$subject,$msg,$mail_header);
+
+	mail($recipient_1,$subject,$msg,$mail_header);
+	mail($recipient_2,$subject,$msg,$mail_header);
+
 session_destroy();
 $return_url = "http://www.cc.puv.fi/~e1500966/web-deve-projects/Othello/products.php";
 header('Location:'.$return_url);
