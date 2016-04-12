@@ -32,43 +32,60 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type='text/javascript'></script>
 
+  <style type="text/css">
+    .nav-tabs > li, .nav-pills > li {
+      float:none;
+      display:inline-block;
+      *display:inline; /* ie7 fix */
+      zoom:1; /* hasLayout ie7 trigger */
+    }
+
+    .nav-tabs, .nav-pills {
+      text-align:center;
+    }
+  </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
-<div class="theblogwidgets" style="">
-<div>   
-<iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/pages/Othello/209409135842253/&width=245&colorscheme=light&show_faces=true&border_color=white&connections=9&stream=true&header=false&height=470" scrolling="no" frameborder="0" scrolling="no" style="border: white; overflow: hidden; height: 470px; width: 245px;background:#fafafa;color:000;"></iframe>
-</div>
-</div>
+  <!-- Facebook plugin 
+  <div class="theblogwidgets" style="">
+    <div>   
+     <iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/pages/Othello/209409135842253/&width=245&colorscheme=light&show_faces=true&border_color=white&connections=9&stream=true&header=false&height=470" scrolling="no" frameborder="0" scrolling="no" style="border: white; overflow: hidden; height: 470px; width: 245px;background:#fafafa;color:000;"></iframe>
+   </div>
+ </div>
+  -->
 
  <!-- navigation section -->
- 
-<div class="navbar navbar-inverse navbar-fixed-top custom-navbar">
-  <div class = "container">
-
-    <a href = "homepage.html" class = "navbar-brand"><img src="images/logo.jpg"></a>
-    <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
-      <span class= "icon-bar"></span>
-      <span class= "icon-bar"></span>
-      <span class= "icon-bar"></span>
-      <span class= "icon-bar"></span>
-    </button>
-    <div class="collapse navbar-collapse navHeaderCollapse">
-      <ul class = "nav navbar-nav navbar-right">
-          <li><a href="homepage.html">WELCOME</a></li>
-              <li><a href="about.html">ABOUT</a></li>
-              <li><a href="products.html">PRODUCTS</a></li>
-              <li><a href="contact.html">CONTACT</a></li>
-              <li><a href="#" class="smoothScroll">FIN</a></li>
-              <li><a href="#" class="smoothScroll">SWE</a></li>
-              <li><a href="#" class="smoothScroll">ENG</a></li>
-              <li><a href="view_cart.php"><span class="glyphicon glyphicon-shopping-cart"> CART</span></a></li>
-          </ul>
-          
-  </div>
-</div>
-</div>
+ <section class="navbar navbar-fixed-top custom-navbar" role="navigation">
+  <div class="container">
+    <div class="collapse navbar-collapse">
+       <ul class="nav navbar-nav navbar-left">
+         <li class="header-logo"><a href="homepage.html">OTHELLO</a></li>
+       </ul>
+       <ul class="nav navbar-nav navbar-right">
+          <?php  
+            if (isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"]) > 0) {
+              echo '<li><a href="view_cart.php" class="smoothScroll"><span class="glyphicon glyphicon-shopping-cart">_CART('.count($_SESSION["cart_products"]).')</span></a></li>';
+            } else {
+              echo '<li><a href="#" class="smoothScroll"><span class="glyphicon glyphicon-shopping-cart">_CART</span></a></li>';              
+            }
+          ?>       
+       </ul>
+       <ul class="nav navbar-nav navbar-right navbar-lang">
+         <li><a href="#" class="smoothScroll">FIN</a></li>
+         <li><a href="#" class="smoothScroll">SWE</a></li>
+         <li><a href="#" class="smoothScroll">ENG</a></li>
+       </ul>
+       <ul class="nav navbar-nav navbar-right">
+         <li><a href="homepage.html" class="smoothScroll">WELCOME</a></li>
+         <li><a href="aboutus.html" class="smoothScroll">ABOUT</a></li>
+         <li><a href="products.html" class="smoothScroll">PRODUCTS</a></li>
+         <li><a href="contact.html" class="smoothScroll">CONTACT</a></li>
+       </ul>
+    </div>
+   </div>
+</section>
 
 
 <!-- main section -->
@@ -132,19 +149,13 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 
 
   <!-- Item list start!-->
-    <div class="container-fluid text-center">
-    <div id="itemlist">
-      <ul class="nav nav-tabs">
-        <li class="active category"><a data-toggle="tab" href="#category1">Cakes</a></li>
-        <li class="category"><a data-toggle="tab" href="#category2">Small Cakes</a></li>
-        <li class="category"><a data-toggle="tab" href="#category3">Buns</a></li>
-        <li class="category"><a data-toggle="tab" href="#category4">Bread</a></li>
-        <li class="category"><a data-toggle="tab" href="#category5">Sandwiches & Salad</a></li>
-        <li class="category"><a data-toggle="tab" href="#category6">Wedding cakes</a></li>
-        <li class="category"><a data-toggle="tab" href="#category7">Special cakes</a></li>
-        <li class="category"><a data-toggle="tab" href="#category8">Custom Orders</a></li>
-      </ul>
-    </div>  
+  <div class="container-fluid text-center">
+    <ul id="itemListNav" class="nav nav-tabs">
+          <li class="active category"><a data-toggle="tab" href="#category1">Category #1</a></li>
+          <li class="category"><a data-toggle="tab" href="#category2">Category #2</a></li>
+          <li class="category"><a data-toggle="tab" href="#category3">Category #3</a></li>
+          <li class="category"><a data-toggle="tab" href="#category4">Category #4</a></li>
+    </ul>
 
     <!--Item tab content-->
 
