@@ -89,64 +89,11 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 
 
 <!-- main section -->
-  <div id="products" class="container-fluid" style="margin:-1.5%">
-    <br>
-       <!-- Carousel start -->
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-         <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
-         <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="images/products/carousel/products_carousel_1.png" alt="Category_1" width="460" height="345">
-            <div style="color:red" class="carousel-caption">
-              <h3>Category 1</h3>
-              <p>This is the first category</p>
-            </div>
-          </div>
+<div id="products" class="container-fluid" style="margin:-1.5%">
 
-          <div class="item">
-            <img src="images/products/carousel/products_carousel_2.png" alt="Dongnai" width="460" height="345">
-            <div style="color:purple" class="carousel-caption">
-              <h3>Category 2</h3>
-              <p>This is the second category</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="images/products/carousel/products_carousel_3.png" alt="MyFamily" width="460" height="345">
-            <div style="color:blue" class="carousel-caption">
-              <h3>Category 3</h3>
-              <p>This is the third category</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="images/products/carousel/products_carousel_4.png" alt="MyFamily" width="460" height="345">
-            <div style="color:tomato" class="carousel-caption">
-              <h3>Category 4</h3>
-              <p>This is the fourth category</p>
-            </div>
-          </div>
-        </div>
-
-         <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-      <!-- Carousel End-->
-
+<div id="demo" data-zs-src='["images/products/carousel/products_carousel_1.png", "images/products/carousel/products_carousel_2.png", "images/products/carousel/products_carousel_3.png","images/products/carousel/products_carousel_4.png"]'>
+</div>
+<!-- zoom slider -->
 
   <!-- Item list start!-->
   <div class="container-fluid text-center">
@@ -256,6 +203,10 @@ echo $item_modal;
  </div>
 </div>
 </footer>
+<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link href="css/zoomslider.css" rel="stylesheet">
+<script src="js/jquery.zoomslider.min.js"></script>
 <script src="js/jquery-lib.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/smoothscroll.js"></script>
