@@ -29,6 +29,9 @@
 #tab-content {
   padding:0px;
 }
+#item {
+	height: 100vh;
+}
 
 /* Add a dark gray background color to the modal header and center text */
 .modal-header, h4, .close {
