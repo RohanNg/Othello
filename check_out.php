@@ -23,6 +23,7 @@ $currency="&euro;";
 	<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:italic' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type='text/javascript'></script>
+	<script src = 'https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body  data-target=".navbar-collapse" data-offset="50">
 
@@ -117,6 +118,7 @@ END-->
 						<label for="text-area"><strong>Message:</strong></label>
 						<textarea class="form-control" placeholder="Type your message here..." rows="7" id="text-area" name="message"></textarea>
 					</div>
+					<div class="g-recaptcha" data-SiteKey = "6LffTR0TAAAAAGzViNiRbvv4_ZkGIf0rBdHa1yhx"> </div>
 					<div class="col-md-offset-8 col-md-4 col-sm-offset-8 col-sm-4">
 						<input type="submit" class="send-button" value="SEND">
 					</div>
