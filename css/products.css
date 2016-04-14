@@ -1,15 +1,13 @@
 #products {
 	padding:0%;
+  
 }
-
-
 .carousel-inner > .item > img {
       width: 100%; /* Set width to 100% */
-      margin: auto;
-  }
+}
 
 .carousel-caption h3 {
-      color: #000 !important;
+      color: #ff4000 !important;
   }
   @media (max-width: 600px) {
     .carousel-caption {
@@ -17,37 +15,85 @@
     }
   } 
  
-#itemlist {
-  padding: 4% 30%;
-  margin:auto;
-}
-.category {
-	padding:2%;
-  margin: auto;
- }
+.nav-tabs > li, .nav-pills > li {
+      float:none;
+      display:inline-block;
+      *display:inline; /* ie7 fix */
+      zoom:1; /* hasLayout ie7 trigger */
+    }
 
+    .nav-tabs, .nav-pills {
+      text-align:center;
+    }
 #tab-content {
-  padding:0px;
-}
-#item {
-	height: 100vh;
-}
-
-/* Add a dark gray background color to the modal header and center text */
-.modal-header, h4, .close {
-    background-color: #333;
-    color: #fff !important;
-    text-align: center;
-    font-size: 30px;
+  padding-top:3%;
 }
 
 .modal-header, .modal-body {
-    padding: 12px 50px;
-    text-align:center;
+    padding: 40px 50px;
 }
 
+.menus-name {
+  color:green;
+  font-size:20px;
+}
+
+.fa{
+  font-size: 17px;
+  color: #666;
+}
+
+.line {
+  width: 600px;
+  height: 30px;
+  margin: auto;
+}
+.line-left,
+.line-right {
+  width: 48%;
+  margin-bottom: 5px;
+  border: 1px solid #666;
+  display: inline-block;
+}
+.line-left {
+  right:58%;
+}
+.line-right {
+  left:58%;
+}
+.btn {
+  border:0px;
+  padding:0px;
+  margin:0px;
+}
 .btn:hover, .btn:focus {
       border: 1px solid #333;
       background-color: #fff;
       color: #000;  
   }
+
+ .menus-category-name {
+  font-size:20px;
+  font-weight: 500;
+ }
+ /* JQuery implementation */
+ #demo{
+  height: 100vh;
+ }
+ .demo-inner-content {
+      position: relative; /* if position is not set, the script will set it to 'relative'. */
+      margin: 0px auto;
+      max-width: 600px;
+      color: #ff4000;
+      text-align: center;
+    }
+.demo-inner-content h4{
+      font-size: 2.2em;
+      margin: 0;
+      padding-top:99%;
+    }
+.demo-inner-content p{
+      font-size: 1.3em;
+      margin: 0;
+    }
+
