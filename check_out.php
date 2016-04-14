@@ -23,7 +23,6 @@ $currency="&euro;";
 	<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:italic' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type='text/javascript'></script>
-	<script src = 'https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body  data-target=".navbar-collapse" data-offset="50">
 
@@ -69,7 +68,7 @@ END-->
 					<h2 style="text-align: center;">SUMMARY OF YOUR ORDER</h2><br>
 					<table width="100%"  cellpadding="6" cellspacing="0">
 						<thead>
-							<tr><th>Name</th><th>Quantity</th><th>Price</th><th>Total</th></tr>
+							<tr><th>Cake name</th><th>Quantity</th><th>Your taste</th></tr>
 						</thead>
 						<tbody>
 							<?php
@@ -79,17 +78,15 @@ END-->
 							foreach ($_SESSION["cart_products"] as $cart_itm){	//set variables to use in content below
 								$product_name = $cart_itm["product_name"];
 								$product_quantity = $cart_itm["product_quantity"];
-								$product_price = $cart_itm["product_price"];
+								$product_note = $cart_itm["product_note"];
 								$product_code = $cart_itm["product_code"];
-								$subtotal = ($product_price * $product_quantity); //calculate Price x Qty
+
 								$bg_color = ($b++%2==1) ? 'odd' : 'even'; //class for zebra stripe 
 								echo '<tr class="'.$bg_color.'">';
 								echo '<td>'.$product_name.'</td>';
 								echo '<td>'.$product_quantity.'</td>';
-								echo '<td>'.$currency.$product_price.'</td>';
-								echo '<td>'.$currency.$subtotal.'</td>';
+								echo '<td>'.$product_note.'</td>';
 								echo '</tr>';
-								$total = ($total + $subtotal); //add subtotal to total var
 							}
 							}
 							?>
@@ -107,18 +104,17 @@ END-->
 				<h2 style="text-align: center;">Your Information </h2><br>
 				<form action="send_order.php" method="POST" class="wow fadeIn" data-wow-delay="0.2s">
 					<div class="col-md-6 col-sm-6">
-						<label for="name"><strong>Name:</strong></label></label>
-						<input type="text" class="form-control" placeholder="Your Name Here"  id="name" name="name">
+						<label for="name"><strong>Your name:</strong></label></label>
+						<input type="text" class="form-control" placeholder="Your Name"  id="name" name="name" />
 					</div>
 					<div class="col-md-6 col-sm-6">
-						<label for="email"></label><strong>Email:</strong></label>
-						<input type="email" class="form-control" placeholder="Your Email Here" id="email" name="email">
+						<label for="email"></label><strong>Your email:</strong></label>
+						<input type="email" class="form-control" placeholder="Your Email" id="email" name="email" />
 					</div>
 					<div class="col-md-12 col-sm-12">
-						<label for="text-area"><strong>Message:</strong></label>
-						<textarea class="form-control" placeholder="Type your message here..." rows="7" id="text-area" name="message"></textarea>
+						<label for="text-area"><strong>Your message:</strong></label>
+						<textarea class="form-control" placeholder="If you want to order something, please let Othello know..." rows="7" id="text-area" name="message"></textarea>
 					</div>
-					<div class="g-recaptcha" data-SiteKey = "6LffTR0TAAAAAGzViNiRbvv4_ZkGIf0rBdHa1yhx"> </div>
 					<div class="col-md-offset-8 col-md-4 col-sm-offset-8 col-sm-4">
 						<input type="submit" class="send-button" value="SEND">
 					</div>
@@ -144,7 +140,6 @@ END-->
 	</div>
 </footer>
 
-<script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="js/jquery-lib.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/smoothscroll.js"></script>

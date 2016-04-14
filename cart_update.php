@@ -23,7 +23,7 @@ if (isset($_POST["type"]) && $_POST["type"]=="add" && $_POST["product_quantity"]
 }
 
 //update or remove items 
-if(isset($_POST["product_qty"]) || isset($_POST["remove_code"]))
+if(isset($_POST["product_qty"]) || isset($_POST["product_note"]) || isset($_POST["remove_code"]))
 {
 	//update item quantity in product session
 	if(isset($_POST["product_qty"]) && is_array($_POST["product_qty"])){
@@ -31,6 +31,12 @@ if(isset($_POST["product_qty"]) || isset($_POST["remove_code"]))
 			if(is_numeric($value)){
 				$_SESSION["cart_products"][$key]["product_quantity"] = $value;
 			}
+		}
+	}
+	//update item note in product session
+	if(isset($_POST["product_note"]) && is_array($_POST["product_note"])){
+		foreach($_POST["product_note"] as $key => $value){            // loop through product_note array
+				$_SESSION["cart_products"][$key]["product_note"] = $value;
 		}
 	}
 	//remove an item from product session

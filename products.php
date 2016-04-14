@@ -24,13 +24,13 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
   <link rel="stylesheet" href="css/main.css">
   <link type="text/css" rel="stylesheet" href="css/products.css" />
 <!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400italic' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:italic' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type='text/javascript'></script>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type='text/javascript'></script>
 
   <style type="text/css">
     .nav-tabs > li, .nav-pills > li {
@@ -43,18 +43,13 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
     .nav-tabs, .nav-pills {
       text-align:center;
     }
+    #demo {
+      height: 100vh;
+    } 
   </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
-
-  <!-- Facebook plugin 
-  <div class="theblogwidgets" style="">
-    <div>   
-     <iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/pages/Othello/209409135842253/&width=245&colorscheme=light&show_faces=true&border_color=white&connections=9&stream=true&header=false&height=470" scrolling="no" frameborder="0" scrolling="no" style="border: white; overflow: hidden; height: 470px; width: 245px;background:#fafafa;color:000;"></iframe>
-   </div>
- </div>
-  -->
 
  <!-- navigation section -->
  <section class="navbar navbar-fixed-top custom-navbar" role="navigation">
@@ -68,7 +63,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
             if (isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"]) > 0) {
               echo '<li><a href="view_cart.php" class="smoothScroll"><span class="glyphicon glyphicon-shopping-cart">_CART('.count($_SESSION["cart_products"]).')</span></a></li>';
             } else {
-              echo '<li><a href="#" class="smoothScroll"><span class="glyphicon glyphicon-shopping-cart">_CART</span></a></li>';              
+              echo '<li><a class="smoothScroll" style="pointer-event: none; cursor: refault;"><span class="glyphicon glyphicon-shopping-cart">_CART</span></a></li>';              
             }
           ?>       
        </ul>
@@ -88,89 +83,109 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 </section>
 
 
-<!-- main section -->
+<!-- main section start-->
 <div id="products" class="container-fluid" style="margin:-1.5%">
 
-<div id="demo" data-zs-src='["images/products/carousel/products_carousel_1.png", "images/products/carousel/products_carousel_2.png", "images/products/carousel/products_carousel_3.png","images/products/carousel/products_carousel_4.png"]'>
-</div>
-<!-- zoom slider -->
+  <!-- zoom slider start-->
+  <div id="demo" data-zs-src='["images/products/carousel/products_carousel_1.png", "images/products/carousel/products_carousel_2.png", "images/products/carousel/products_carousel_3.png","images/products/carousel/products_carousel_4.png"]'>
+  </div>
+  <!-- zoom slider end -->
 
   <!-- Item list start!-->
   <div class="container-fluid text-center">
     <ul id="itemListNav" class="nav nav-tabs">
-          <li class="active category"><a data-toggle="tab" href="#category1">Category #1</a></li>
-          <li class="category"><a data-toggle="tab" href="#category2">Category #2</a></li>
-          <li class="category"><a data-toggle="tab" href="#category3">Category #3</a></li>
-          <li class="category"><a data-toggle="tab" href="#category4">Category #4</a></li>
+          <?php 
+          $query = "SELECT * FROM cake_categories ORDER BY category_id ASC";
+          $category_table = $mysqli->query($query);
+          if($category_table) {
+            $category_list ="";
+            while($cat_obj = $category_table->fetch_object()){
+
+              if($cat_obj->category_id == 1){
+                $category_list .= "<li class='active category'><a data-toggle='tab' href='#category".$cat_obj->category_id."'>".$cat_obj->category_name."</a></li>";
+              } else {
+                $category_list .= "<li class='category'><a data-toggle='tab' href='#category".$cat_obj->category_id."'>".$cat_obj->category_name."</a></li>";
+              }
+            }
+          }
+          echo $category_list;
+          ?>
     </ul>
 
     <!--Item tab content-->
 
     <div id="tab-content" class="tab-content">
       <?php
+          $query = "SELECT * FROM cake_categories ORDER BY category_id ASC";
+          $category_table = $mysqli->query($query);
         // div for each tab content 
-        $item_list = "";
-        for($i = 1; $i <= 4; $i++){
-          if( $i ==1 ){
-            $item_list .= "\r\n<div id='category1' class='row tab-pane fade in active' role='tab'>";
-          } else {
-            $item_list .= "\r\n<div id='category".$i."' class='row tab-pane fade' role='tab'>";
-          }
-
-          $query = "SELECT product_code, product_name, product_img_path FROM cake_category_".$i." ORDER BY id ASC";
-          $results = $mysqli->query($query);
-          if($results) {
-            while($obj = $results->fetch_object()){
-            $item_list .= <<<EOT
-              
-              <div class="col-xs-4" data-toggle="modal" data-target="#{$obj->product_code}">
-                <img src="{$obj->product_img_path}" alt="{$obj->product_name}" width="100%"/>
-               <p>Product name: {$obj->product_name}</p>
-              </div>
+          if($category_table) {
+            $item_list = "";         
+            while($cat_obj = $category_table->fetch_object()){
+              // create the start of div for each category
+              if($cat_obj->category_id == 1){
+                $item_list .= "\r\n<div id='category1' class='row tab-pane fade in active' role='tab'>";
+              } else {
+                $item_list .= "\r\n<div id='category{$cat_obj->category_id}' class='row tab-pane fade' role='tab'>";
+              }
+              // print the content for each tab
+              $query = "SELECT product_id, product_name, product_img_path FROM cake_products WHERE category_id = {$cat_obj->category_id} ORDER BY product_id ASC ";
+              $results = $mysqli->query($query);
+              if($results) {
+                while($cake_obj = $results->fetch_object()){
+                $item_list .= <<<EOT
+                  
+                  <div class="col-xs-4" data-toggle="modal" data-target="#{$cat_obj->category_id}_{$cake_obj->product_id}">
+                    <img src="{$cake_obj->product_img_path}" alt="{$cake_obj->product_name}" width="100%"/>
+                    <p>Product name: {$cake_obj->product_name}</p>
+                  </div>
 EOT;
-            }          
-          }
-          $item_list .= "\r\n</div>";
-        }
-        echo $item_list;
-      ?>
+                }          
+              }
+              $item_list .= "\r\n</div>";
+            }
+            echo $item_list;
+          } 
+      ?>    
     </div>
   </div>
 <!-- Item list end -->
 
 <!-- Create modal for each Item list -->
 <?php
-$item_modal = "";
-for( $x = 1; $x <= 4; $x++){
-        $query = "SELECT product_code, product_name, product_description, product_img_path, product_price FROM cake_category_".$x." ORDER BY id ASC";
-        $results = $mysqli->query($query); 
+          $query = "SELECT * FROM cake_categories ORDER BY category_id ASC";
+          $category_table = $mysqli->query($query);
+    if($category_table) {
+      $item_modal = "";         
+      while($cat_obj = $category_table->fetch_object()){
+        $query = "SELECT product_id, product_name, product_img_path FROM cake_products WHERE category_id = {$cat_obj->category_id} ORDER BY product_id ASC ";
+        $results = $mysqli->query($query);
         if($results) {
-          while($obj = $results->fetch_object()){
-            $item_modal .= <<<EOT
-
-<!-- Modal of {$obj->product_code} -->
-<div class="modal fade" id="{$obj->product_code}" role="dialog">
+          while($cake_obj = $results->fetch_object()){
+          $item_modal .= <<<EOT
+<div class="modal fade" id="{$cat_obj->category_id}_{$cake_obj->product_id}" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content of {$obj->product_code}-->
+    <!-- Modal content -->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">{$obj->product_name}</h4>
+        <h4 class="modal-title">{$cake_obj->product_name}</h4>
       </div>
+
       <div class="modal-body">
-        <img src="{$obj->product_img_path}" alt="{$obj->product_name}" width="100%"/>
-        <p>Description ...{$obj->product_description} </p>
+        <img src="{$cake_obj->product_img_path}" alt="{$cake_obj->product_name}" width="100%"/>
         <hr/>
         <form role="form" method="POST" action="cart_update.php">
-          <input type="hidden" name="product_code" value="{$obj->product_code}" />
+          <input type="hidden" name="product_code" value="{$cat_obj->category_id}_{$cake_obj->product_id}" />
           <input type="hidden" name="type" value="add" />
           <input type="hidden" name="return_url" value="{$current_url}" />
-          <input type="hidden" name="product_name" value="{$obj->product_name}" />
-          <input type="hidden" name="product_price" value="{$obj->product_price}" />
+          <input type="hidden" name="product_name" value="{$cake_obj->product_name}" />
           <div class="form-group">
-            <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> {$obj->product_name}, price</label>
-            <input type="number" class="form-control" id="quantity" name="product_quantity" placeholder="How many?" />
+            <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Quantity</label>
+            <input type="number" class="form-control" id="psw" name="product_quantity" placeholder="How many?" />
+            <label for="note"><span class="glyphicon glyphicon-pencil"></span> Please tell us if you want your cake made in certain way</label>
+            <input type="text" class="form-control" id="note" name="product_note" maxlength="200" placeholder="Tell me your taste" />
           </div>
           <button type="submit" class="btn btn-block">Confirm
             <span class="glyphicon glyphicon-ok"></span>
@@ -181,11 +196,12 @@ for( $x = 1; $x <= 4; $x++){
   </div>
 </div>
 EOT;
-          }
+          }          
         }
-}
-echo $item_modal;
-?>		
+      }
+      echo $item_modal;
+    } 
+?>    
 
 </div>
 <!-- Main section end -->
@@ -216,41 +232,3 @@ echo $item_modal;
 </body>
 </html>
 
-<!-- Modal of {$obj->product_code} -->
-<div class="modal fade" id="{$obj->product_code}" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content of {$obj->product_code}-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">{$obj->product_name}</h4>
-      </div>
-      <div class="modal-body">
-        <img src="{$obj->product_img_path}" alt="{$obj->product_name}" width="100%"/>
-        <p>Description ... </p>
-        <hr/>
-        <form role="form" method="POST" action="cart_update.php">
-          <input type="hidden" name="product_code" value="{$obj->product_code}" />
-          <input type="hidden" name="type" value="add" />
-          <input type="hidden" name="return_url" value="{$current_url}" />
-          <input type="hidden" name="product_name" value="{$obj->product_name}" />
-          <input type="hidden" name="product_price" value="{$obj->product_price}" />
-          <div class="form-group">
-            <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> {$obj->product_name}, price</label>
-            <input type="number" class="form-control" id="quantity" name="product_quantity" placeholder="How many?" />
-          </div>
-          <button type="submit" class="btn btn-block">Confirm
-            <span class="glyphicon glyphicon-ok"></span>
-          </button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"/>
-          <span class="glyphicon glyphicon-remove"></span> Cancel
-        </button>
-        <p>Need <a href="#">help?</a></p>
-      </div>
-    </div>      
-  </div>
-</div>

@@ -3,10 +3,13 @@ session_start();
 $msg = "<p><strong>Name:</strong>     ".$_POST['name']."</p>";
 $msg .= "<p><strong>Email:</strong>   ".$_POST['email']."</p>";
 $msg .= "<p><strong>Message:</strong> ".$_POST['message']."</p>";
-$msg .= "<table style='border: 1px solid black;'><tr><th style='border: 1px solid black;'>Name</th><th style='border: 1px solid black;'>Quantity</th></tr>";
+$msg .= "<table style='border: 1px solid black;'><tr><th style='border: 1px solid black;'>Name</th><th style='border: 1px solid black;'>Quantity</th><th>Customer taste</th></tr>";
 
 foreach ($_SESSION["cart_products"] as $cart_itm) {
-	$msg .= "<tr><td style='border: 1px solid black;'>".$cart_itm["product_code"]."</td><td style='border: 1px solid black;'>".$cart_itm["product_quantity"]."</td></tr>";
+	$msg .= "<tr><td style='border: 1px solid black;'>"
+	.$cart_itm["product_code"]."</td><td style='border: 1px solid black;'>"
+	.$cart_itm["product_quantity"]."</td><td>"
+	.$cart_itm["product_note"]."</td></tr>";
 }
 $msg .= "</table>";
 
