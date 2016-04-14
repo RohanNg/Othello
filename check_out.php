@@ -90,9 +90,6 @@ END-->
 							}
 							}
 							?>
-							<tr>
-								<td colspan="4"><span style="float:right;text-align: right;"><strong>Total</strong> :<?php echo $currency.$total; ?> </span></td>
-							</tr>
 						</tbody>
 					</table>
 				</div>				
