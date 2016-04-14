@@ -94,7 +94,10 @@ navigation section
     font-size: 16px;
     font-weight: 500; 
     }
-
+.border-skew {
+  border-left: 1px solid #fff;
+  transform: skew(-20deg);
+}
 /*.custom-navbar .navbar-lang {
   padding-left: 30px;
 }
