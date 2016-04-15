@@ -36,26 +36,27 @@ $currency="&euro;";
 END-->
 
 <!-- navigation section -->
-<section class="navbar navbar-fixed-top custom-navbar" role="navigation" style="background-color: #555;">
-	<div class="container">
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-left">
-				<li class="header-logo"><a href="#">OTHELLO</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right navbar-lang">
-				<li><a href="#" class="smoothScroll">FIN</a></li>
-				<li><a href="#" class="smoothScroll">SWE</a></li>
-				<li><a href="#" class="smoothScroll">ENG</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="homepage.html" class="smoothScroll">WELCOME</a></li>
-				<li><a href="about.html" class="smoothScroll">ABOUT</a></li>
-				<li><a href="products.html" class="smoothScroll">PRODUCTS</a></li>
-				<li><a href="contact.html" class="smoothScroll">CONTACT</a></li>
-			</ul>
-		</div>
-	</div>
-</section>
+<div class="navbar navbar-inverse navbar-fixed-top custom-navbar">
+  <div class = "container">
+
+    <a href = "homepage.html" class = "navbar-brand"><img src="images/logo.png"></a>
+    <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+      <span class= "icon-bar"></span>
+      <span class= "icon-bar"></span>
+      <span class= "icon-bar"></span>
+      <span class= "icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse navHeaderCollapse">
+
+      <ul class = "nav navbar-nav navbar-right">
+              <li class="active_page"><a href="homepage.html">WELCOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="products.php">PRODUCTS</a></li>
+              <li><a href="contact.html">CONTACT</a></li>     
+          </ul>
+  </div>
+</div>
+</div>
 
 <!-- main section -->
 <section id="main">
