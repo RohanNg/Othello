@@ -52,35 +52,34 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
  <!-- navigation section -->
- <section class="navbar navbar-fixed-top custom-navbar" role="navigation">
-  <div class="container">
-    <div class="collapse navbar-collapse">
-       <ul class="nav navbar-nav navbar-left">
-         <li class="header-logo"><a href="homepage.html">OTHELLO</a></li>
-       </ul>
-       <ul class="nav navbar-nav navbar-right">
-          <?php  
-            if (isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"]) > 0) {
-              echo '<li><a href="view_cart.php" class="smoothScroll"><span class="glyphicon glyphicon-shopping-cart">_CART('.count($_SESSION["cart_products"]).')</span></a></li>';
-            } else {
-              echo '<li><a class="smoothScroll" style="pointer-event: none; cursor: refault;"><span class="glyphicon glyphicon-shopping-cart">_CART</span></a></li>';              
-            }
-          ?>       
-       </ul>
-       <ul class="nav navbar-nav navbar-right navbar-lang">
-         <li><a href="#" class="smoothScroll">FIN</a></li>
-         <li><a href="#" class="smoothScroll">SWE</a></li>
-         <li><a href="#" class="smoothScroll">ENG</a></li>
-       </ul>
-       <ul class="nav navbar-nav navbar-right">
-         <li><a href="homepage.html" class="smoothScroll">WELCOME</a></li>
-         <li><a href="about.html" class="smoothScroll">ABOUT</a></li>
-         <li><a href="products.html" class="smoothScroll">PRODUCTS</a></li>
-         <li><a href="contact.html" class="smoothScroll">CONTACT</a></li>
-       </ul>
-    </div>
-   </div>
-</section>
+<div class="navbar navbar-inverse navbar-fixed-top custom-navbar">
+  <div class = "container">
+
+    <a href = "homepage.html" class = "navbar-brand"><img src="images/logo.png"></a>
+    <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+      <span class= "icon-bar"></span>
+      <span class= "icon-bar"></span>
+      <span class= "icon-bar"></span>
+      <span class= "icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse navHeaderCollapse">
+
+      <ul class = "nav navbar-nav navbar-right">
+              <li class="active_page"><a href="homepage.html">WELCOME</a></li>
+              <li><a href="#about-us">ABOUT</a></li>
+              <li><a href="#our-products">PRODUCTS</a></li>
+              <li><a href="#contact-us">CONTACT</a></li>
+              <?php  
+              if (isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"]) > 0) {
+                echo '<li><a href="view_cart.php" class="smoothScroll"><span class="glyphicon glyphicon-shopping-cart">_CART('.count($_SESSION["cart_products"]).')</span></a></li>';
+              } else {
+                echo '<li><a class="smoothScroll" style="pointer-event: none; cursor: refault;"><span class="glyphicon glyphicon-shopping-cart">_CART</span></a></li>';              
+              }
+              ?>       
+          </ul>
+  </div>
+</div>
+</div>
 
 
 <!-- main section start-->
