@@ -7,11 +7,13 @@ $(window).scroll(function() {
       $(".navbar-fixed-top").show();
     }
     if ($(".navbar").offset().top > 500) {
-        $(".navbar-fixed-top").show();
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
-    } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    }
+       $(".navbar-fixed-top").show();
+       $(".navbar-fixed-top").addClass("top-nav-collapse");
+       $(".navbar-fixed-top li").addClass("border-skew");
+   } else {
+       $(".navbar-fixed-top").removeClass("top-nav-collapse");
+       $(".navbar-fixed-top li").removeClass("border-skew");
+   }
 });
 
 // Floating Facebook Widget by www.TheBlogWidgets.com START
