@@ -66,9 +66,9 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 
       <ul class = "nav navbar-nav navbar-right">
               <li class="active_page"><a href="homepage.html">WELCOME</a></li>
-              <li><a href="#about-us">ABOUT</a></li>
-              <li><a href="#our-products">PRODUCTS</a></li>
-              <li><a href="#contact-us">CONTACT</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="products.php">PRODUCTS</a></li>
+              <li><a href="contact.html">CONTACT</a></li>
               <?php  
               if (isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"]) > 0) {
                 echo '<li><a href="view_cart.php" class="smoothScroll"><span class="glyphicon glyphicon-shopping-cart">_CART('.count($_SESSION["cart_products"]).')</span></a></li>';
