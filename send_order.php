@@ -47,7 +47,7 @@ session_destroy();
 	<title>Email Sent...</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="refresh" content="2;url=http://www.cc.puv.fi/~e1500966/web-deve-projects/Othello/products.php" />
+	<meta http-equiv="refresh" content="2;url=products.php" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/feedback.css">
