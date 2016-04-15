@@ -114,9 +114,9 @@ navigation section
   color: #e7b99f;
   outline: none;
 }
-.custom-navbar .nav li.active_page > a {
+/* .custom-navbar .nav li.active_page > a {
       color: #f60;
-    }
+    }*/
 .custom-navbar .navbar-toggle {
         border: none;
         padding-top: 10px;
