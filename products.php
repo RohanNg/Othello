@@ -74,7 +74,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
        </ul>
        <ul class="nav navbar-nav navbar-right">
          <li><a href="homepage.html" class="smoothScroll">WELCOME</a></li>
-         <li><a href="aboutus.html" class="smoothScroll">ABOUT</a></li>
+         <li><a href="about.html" class="smoothScroll">ABOUT</a></li>
          <li><a href="products.html" class="smoothScroll">PRODUCTS</a></li>
          <li><a href="contact.html" class="smoothScroll">CONTACT</a></li>
        </ul>
