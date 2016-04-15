@@ -86,7 +86,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 <div id="products" class="container-fluid" style="margin:-1.5%">
 
   <!-- zoom slider start-->
-  <div id="demo" data-zs-src='["images/products/carousel/products_carousel_1.png", "images/products/carousel/products_carousel_2.png", "images/products/carousel/products_carousel_3.png","images/products/carousel/products_carousel_4.png"]'>
+  <div id="demo" data-zs-src='["images/products/carousel/products_carousel_1.jpg", "images/products/carousel/products_carousel_2.jpg", "images/products/carousel/products_carousel_3.jpg","images/products/carousel/products_carousel_4.jpg"]'>
   </div>
   <!-- zoom slider end -->
 
