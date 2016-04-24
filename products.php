@@ -135,7 +135,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
                 while($cake_obj = $results->fetch_object()){
                 $item_list .= <<<EOT
                   
-                  <div class="col-xs-4" data-toggle="modal" data-target="#{$cat_obj->category_id}_{$cake_obj->product_id}">
+                  <div class="col-md-4 col-sm-6" data-toggle="modal" data-target="#{$cat_obj->category_id}_{$cake_obj->product_id}">
                     <img src="{$cake_obj->product_img_path}" alt="{$cake_obj->product_name}" width="100%"/>
                     <p>Product name: {$cake_obj->product_name}</p>
                   </div>
