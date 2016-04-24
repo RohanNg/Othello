@@ -105,7 +105,7 @@ END-->
 						<input type="text" class="form-control" placeholder="Your Name"  id="name" name="name" />
 					</div>
 					<div class="col-md-6 col-sm-6">
-						<label for="email"></label><strong>Your email:</strong></label>
+						<label for="email"><strong>Your email:</strong></label>
 						<input type="email" class="form-control" placeholder="Your Email" id="email" name="email" />
 					</div>
 					<div class="col-md-12 col-sm-12">
