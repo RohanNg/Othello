@@ -1,7 +1,9 @@
-<<?php 
+<?php 
 session_start();
-$currency="&euro;";
- ?>
+if(empty($_SESSION["cart_products"])){
+	header('Location:products.php');		
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,35 +28,29 @@ $currency="&euro;";
 </head>
 <body  data-target=".navbar-collapse" data-offset="50">
 
-<!--stupid Facebook widgets 
-<div class="theblogwidgets" style="">
-	<div>
-		<iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/pages/Othello/209409135842253/&width=245&colorscheme=light&show_faces=true&border_color=white&connections=9&stream=true&header=false&height=470" scrolling="no" frameborder="0" scrolling="no" style="border: white; overflow: hidden; height: 470px; width: 245px;background:#fafafa ;color:000;"></iframe>
-	</div>
-</div>
-END-->
 
 <!-- navigation section -->
-<section class="navbar navbar-fixed-top custom-navbar" role="navigation" style="background-color: #555;">
-	<div class="container">
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-left">
-				<li class="header-logo"><a href="#">OTHELLO</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right navbar-lang">
-				<li><a href="#" class="smoothScroll">FIN</a></li>
-				<li><a href="#" class="smoothScroll">SWE</a></li>
-				<li><a href="#" class="smoothScroll">ENG</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="homepage.html" class="smoothScroll">WELCOME</a></li>
-				<li><a href="about.html" class="smoothScroll">ABOUT</a></li>
-				<li><a href="products.html" class="smoothScroll">PRODUCTS</a></li>
-				<li><a href="contact.html" class="smoothScroll">CONTACT</a></li>
-			</ul>
-		</div>
+<div class="navbar navbar-inverse navbar-fixed-top custom-navbar">
+	<div class = "container">
+
+		<a href = "homepage.html" class = "navbar-brand"><img src="images/logo.png"></a>
+		<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+			<span class= "icon-bar"></span>
+			<span class= "icon-bar"></span>
+			<span class= "icon-bar"></span>
+			<span class= "icon-bar"></span>
+		</button>
+		<div class="collapse navbar-collapse navHeaderCollapse">
+
+			<ul class = "nav navbar-nav navbar-right">
+			        <li><a href="homepage.html">WELCOME</a></li>
+       				<li><a href="about.html">ABOUT</a></li>
+        			<li><a href="products.php">PRODUCTS</a></li>
+        			<li class="active_page"><a href="contact.html">CONTACT</a></li>
+        	</ul>
 	</div>
-</section>
+</div>
+</div>
 
 <!-- main section -->
 <section id="main">
@@ -68,7 +64,7 @@ END-->
 					<h2 style="text-align: center;">SUMMARY OF YOUR ORDER</h2><br>
 					<table width="100%"  cellpadding="6" cellspacing="0">
 						<thead>
-							<tr><th>Cake name</th><th>Quantity</th><th>Your taste</th></tr>
+							<tr><th>Cake name</th><th>Quantity</th><th>Your customized taste</th></tr>
 						</thead>
 						<tbody>
 							<?php
@@ -101,12 +97,12 @@ END-->
 				<h2 style="text-align: center;">Your Information </h2><br>
 				<form action="send_order.php" method="POST" class="wow fadeIn" data-wow-delay="0.2s">
 					<div class="col-md-6 col-sm-6">
-						<label for="name"><strong>Your name:</strong></label></label>
-						<input type="text" class="form-control" placeholder="Your Name"  id="name" name="name" />
+						<label for="name"><strong>Your name:</strong></label>
+						<input type="text" class="form-control" placeholder="Your Name"  id="name" name="name" required />
 					</div>
 					<div class="col-md-6 col-sm-6">
 						<label for="email"><strong>Your email:</strong></label>
-						<input type="email" class="form-control" placeholder="Your Email" id="email" name="email" />
+						<input type="email" class="form-control" placeholder="Your Email" id="email" name="email" required />
 					</div>
 					<div class="col-md-12 col-sm-12">
 						<label for="text-area"><strong>Your message:</strong></label>

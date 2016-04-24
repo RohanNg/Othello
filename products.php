@@ -107,6 +107,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
               }
             }
           }
+          $category_list .= "<li class='category'><a data-toggle='tab' href='#customized_order'>Make your own cake</a></li>";
           echo $category_list;
           ?>
     </ul>
@@ -143,6 +144,36 @@ EOT;
               }
               $item_list .= "\r\n</div>";
             }
+            $item_list .=<<<EOT
+\r\n<div id='customized_order' class='row tab-pane fade' role='tab'> 
+      <div class="col-md-12 col-sm-12">
+        <h2 style="text-align: center;">Order your own cake </h2><br>
+        <form action="cart_update.php" method="POST">
+          <input type="hidden" name="customized_order" value="1" />
+          <input type="hidden" name="type" value="add" />
+          <input type="hidden" name="return_url" value="{$current_url}" />
+          <div class="col-md-12 col-sm-12">
+            <label for="product_name"><strong>Cake's name:</strong></label>
+            <input type="text" class="form-control" placeholder="Name of your cake..."  id="product_name" name="product_name" required />
+          </div>
+          
+          <div class="col-md-12 col-sm-12">
+            <label for="product_quantity"><strong>Quantity:</strong></label>
+            <input type="number" class="form-control" placeholder="Number of cake you want..."  id="product_quantity" name="product_quantity" required />
+          </div>
+
+          <div class="col-md-12 col-sm-12">
+            <label for="product_note"><strong>Description of your cake</strong></label>
+            <input type="text" class="form-control" placeholder="Please describe your cake" id="product_note" name="product_note" maxlength="400" required />
+          </div>
+
+          <div class="col-md-offset-8 col-md-4 col-sm-offset-8 col-sm-4">
+            <input type="submit" class="send-button" value="Confirm">
+          </div>
+        </form>
+      </div>
+    </div> 
+EOT;
             echo $item_list;
           } 
       ?>    
@@ -177,13 +208,14 @@ EOT;
         <hr/>
         <form role="form" method="POST" action="cart_update.php">
           <input type="hidden" name="product_code" value="{$cat_obj->category_id}_{$cake_obj->product_id}" />
+          <input type="hidden" name="customized_order" value="0" />
           <input type="hidden" name="type" value="add" />
           <input type="hidden" name="return_url" value="{$current_url}" />
           <input type="hidden" name="product_name" value="{$cake_obj->product_name}" />
           <div class="form-group">
             <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Quantity</label>
             <input type="number" class="form-control" id="psw" name="product_quantity" placeholder="How many?" />
-            <label for="note"><span class="glyphicon glyphicon-pencil"></span> Please tell us if you want your cake made in certain way</label>
+            <label for="note"><span class="glyphicon glyphicon-pencil"></span> If you wish specific taste for for cake, please inform us</label>
             <input type="text" class="form-control" id="note" name="product_note" maxlength="200" placeholder="Tell me your taste" />
           </div>
           <button type="submit" class="btn btn-block">Confirm

@@ -2,11 +2,26 @@
 session_start();
 include_once("config.php");
 
+function safe_input($data) {
+   $data = trim($data);
+   $data = stripslashes($data);
+   $data = htmlspecialchars($data);
+   return $data;
+}
 //add product to session or create new one
 
-if (isset($_POST["type"]) && $_POST["type"]=="add" && $_POST["product_quantity"]>0) {
+if (isset($_POST["type"]) && $_POST["type"]=="add" && $_POST["product_quantity"]>0 ) {
 	foreach($_POST as $key => $value) {
 		$new_product["$key"] = filter_var($value, FILTER_SANITIZE_STRING);
+	}
+
+	if ($new_product["customized_order"] == 1) {
+		if (empty($_SESSION["customized_order_code"])) {
+			$_SESSION["customized_order_code"] = 1;
+		} else {
+			$_SESSSION["customized_order_code"] ++;
+		}
+		$new_product["product_code"] = "customized_order_".$_SESSSION["customized_order_code"];
 	}
 	
 	 // remove unecessary vars
@@ -23,19 +38,20 @@ if (isset($_POST["type"]) && $_POST["type"]=="add" && $_POST["product_quantity"]
 }
 
 //update or remove items 
-if(isset($_POST["product_qty"]) || isset($_POST["product_note"]) || isset($_POST["remove_code"]))
+if( isset($_POST["product_qty"]) || isset($_POST["product_note"]) || isset($_POST["remove_code"]))
 {
 	//update item quantity in product session
 	if(isset($_POST["product_qty"]) && is_array($_POST["product_qty"])){
 		foreach($_POST["product_qty"] as $key => $value){            // loop through product_qty array
-			if(is_numeric($value)){
-				$_SESSION["cart_products"][$key]["product_quantity"] = $value;
+			if(intval($value) > 0){
+				$_SESSION["cart_products"][$key]["product_quantity"] = intval($value);
 			}
 		}
 	}
 	//update item note in product session
 	if(isset($_POST["product_note"]) && is_array($_POST["product_note"])){
 		foreach($_POST["product_note"] as $key => $value){            // loop through product_note array
+				$value = safe_input($value);
 				$_SESSION["cart_products"][$key]["product_note"] = $value;
 		}
 	}

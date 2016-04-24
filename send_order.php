@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	} else {
 		$name = safe_input($_POST["name"]);	
 		$email = safe_input($_POST["email"]);		
-		if (!preg_match("/^[a-zA-Z ]*$/",$name) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		if (!preg_match("/^[a-zA-Z äö]*$/",$name) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			header('Location:check_out.php');
      	} else {
 			$message = safe_input($_POST["message"]);	
