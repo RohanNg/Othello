@@ -1,6 +1,6 @@
 body {
     background: #ffffff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Optima', sans-serif;
     font-weight: 400;
     position: relative;
   }
@@ -75,6 +75,7 @@ a {
 /* ==========================================================================
 navigation section
 ========================================================================== */
+
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
@@ -87,8 +88,8 @@ navigation section
     background: #000;
     margin-bottom: 0;
     margin: 0 auto;
+    padding: 15px;
 }
-
 .custom-navbar .navbar-right li a {
     color: #878b72;
     font-size: 16px;
@@ -98,43 +99,41 @@ navigation section
   border-left: 1px solid #fff;
   transform: skew(-20deg);
 }
-/*.custom-navbar .navbar-lang {
-  padding-left: 30px;
-}
-.custom-navbar .navbar-lang li a{
-  padding-left: 5px;
-  padding-right: 5px;
-}*/
+
 .custom-navbar .nav li a:hover {
-  	background: transparent;
+
    color: #e7b99f;
 }
 .custom-navbar .nav > li > a:focus {
-  background-color: transparent;
   color: #e7b99f;
   outline: none;
 }
-/* .custom-navbar .nav li.active_page > a {
-      color: #f60;
-    }*/
+.ease-navbar {
+  padding: 0px;
+  font-size: 13px;
+}
 .custom-navbar .navbar-toggle {
         border: none;
         padding-top: 10px;
     }
 .custom-navbar .navbar-toggle .icon-bar {
         background: #00c6d7;
-        border-color: transparent;
+
     }
 @media(min-width:768px){
     .custom-navbar {
             background: #000;
-            padding: 10px;
             border-bottom: 0;
-            background: 0 0;
+            -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
          }
     .custom-navbar.top-nav-collapse {
             padding: 8px;
             background: #000;
+            -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
         }
 }
 

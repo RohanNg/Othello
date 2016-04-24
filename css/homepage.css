@@ -1,6 +1,6 @@
 #header, #about-us, #recipes, #our-products, #contact-us {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 /* ================header section================= */
@@ -8,6 +8,7 @@
   background: url(../images/background_header-contact.jpg) no-repeat top center;
   background-size: cover !important;
   overflow: hidden;
+  background-attachment: fixed;
   background-position: center;
   color: #ffffff;
   display: -webkit-flex;
@@ -64,7 +65,7 @@
   color: orange;
 }
 #about-us .left-side p {
-  font-size: 18px;
+  font-size: 15px;
 }
 #about-us .line {
   width: 200px;
@@ -204,7 +205,7 @@
   color: orange;
 }
 #our-products .right-side p {
-  font-size: 18px;
+  font-size: 15px;
   color: black;
 }
 #our-products .line {
@@ -259,7 +260,7 @@
 }
 #contact-info ul li {
   list-style-type: none;
-  font-size: 18px;
+  font-size: 15px;
 }
 #contact-info input {
   font-size: 18px;
