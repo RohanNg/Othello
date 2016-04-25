@@ -60,9 +60,8 @@ if(empty($_SESSION["cart_products"])){
 			<!-- left side -->
 			<div class="col-md-6 col-sm-6 left-side">
 				<br><br><br>
-				<h2 style="text-align: center;">SUMMARY OF YOUR ORDER</h2>
+				<h2 style="text-align: center;">SUMMARY OF YOUR ORDER</h2> <br><br>
 				<div class="cart-view-table-back"> <!-- this is stupid, I try to push the table down, how to achieve the table in the middle-->
-					<br>
 	<?php
 		$table = "<h5 style='text-align: center;'>Product from Othello</h5>";
 		$table .= '<table width="100%"  cellpadding="6" cellspacing="0"><thead><tr><th>Name</th><th>Quantity</th><th>Your customized taste</th></tr></thead>';
@@ -90,15 +89,15 @@ EOT;
 			}
 		}
 			// check if the first table has any content
-			if ($othello_product == 0) {
-				$table = "";
-			} elseif($othello_product == count($_SESSION["cart_products"])) {
+			if($othello_product == count($_SESSION["cart_products"])) {
 				// skip the if
-			}
-			else {
-				$table .= "</tbody></table><br><br>";
+			} else {
+				$table .= "</tbody></table><br>";
+				if ($othello_product == 0) {
+					$table = "";
+				}
 				$table .= "<h5 style='text-align: center;'>Your order</h5>";
-				$table .= '<table width="100%"  cellpadding="6" cellspacing="0"><thead><tr><th>Name</th><th>Quantity</th><th>Your customized taste</th></tr></thead>';
+				$table .= '<table width="100%"  cellpadding="6" cellspacing="0"><thead><tr><th>Name</th><th>Quantity</th><th>Description</th></tr></thead>';
 				$table .= '<tbody>';
 				foreach ($_SESSION["cart_products"] as $cart_itm){	//set variables to use in content below
 					$product_name = $cart_itm["product_name"];
@@ -137,7 +136,32 @@ EOT;
 						<label for="email"><strong>Your email:</strong></label>
 						<input type="email" class="form-control" placeholder="Your Email" id="email" name="email" required />
 					</div>
-					<div class="col-md-12 col-sm-12">
+					<div class="col-md 12 col-sm-12 form-gruop text-center">
+						<label class="radio-inline">
+							<input type="radio" class="pick_up" name="delivery_mode" value="pick_up"><strong>Pick up at Othello</strong>						
+						</label>
+						<label class="radio-inline">
+							<input type="radio" class="home_delivery" name="delivery_mode" value="home_delivery"><strong>Home delivery</strong>						
+						</label>
+					</div>
+					<div class="col-sm-12">
+						<div class="collapse pick_up">
+							<p> If you want to pick up at Othello, Othello will contact you to discuss about the time </p>
+						</div>
+						<div class="collapse home_delivery">
+							<p> Othello will inform you about delivery time </p>
+							<label for="address"> Your address: </label>
+							<input type="text" class="form-control" name="address" id="address" placeholder="Your address..." required/>
+						</div>
+					</div>
+					<script type="text/javascript">
+						$('input[type=radio]').on('change', function () {
+    if (!this.checked) return
+    $('.collapse').not($('div.' + $(this).attr('class'))).slideUp();
+    $('.collapse.' + $(this).attr('class')).slideDown();
+});
+					</script>
+					<div class="col-md-12 col-sm-12 form-gruop" style="margin-top: 10px;">
 						<label for="text-area"><strong>Your message:</strong></label>
 						<textarea class="form-control" placeholder="If you want to order something, please let Othello know..." rows="7" id="text-area" name="message"></textarea>
 					</div>

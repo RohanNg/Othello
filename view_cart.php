@@ -45,14 +45,15 @@ EOT;
 			}
 		}
 			// check if the first table has any content
-			if ($othello_product == 0) {
-				$table = "";
-			} elseif($othello_product == count($_SESSION["cart_products"])) {
+			if($othello_product == count($_SESSION["cart_products"])) {
 				//this shuold do nothing.
 			} else {
 				$table .= "</tbody></table><br><br>";
+				if ($othello_product == 0) {
+					$table = "";
+				}
 				$table .= '<h2>Your order</h2>';
-				$table .= '<table width="100%"  cellpadding="6" cellspacing="0"><thead><tr><th>Name</th><th>Quantity</th><th>Your customized taste</th><th>Remove</th></tr></thead>';
+				$table .= '<table width="100%"  cellpadding="6" cellspacing="0"><thead><tr><th>Name</th><th>Quantity</th><th>Description</th><th>Remove</th></tr></thead>';
 				$table .= '<tbody>';
 				foreach ($_SESSION["cart_products"] as $cart_itm){	//set variables to use in content below
 					$product_name = $cart_itm["product_name"];
