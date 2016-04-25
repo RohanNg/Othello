@@ -84,38 +84,40 @@ if(empty($_SESSION["cart_products"])){
 			   	<tr class="$bg_color">
 			   		<td>{$product_name}</td>
 			   		<td>{$product_qty}</td>
-			   		<td>$product_note}</td>		   	
-			   	</tr>
-EOT;
-			}
-		}
-		$table .="</tbody></table>";
-			// check if the first table has any content
-			if ($othello_product == 0) {
-				$table = "";
-			} else {
-				$table .= "<br><br>";
-			}
-			$table .= "<h5 style='text-align: center;'>Your order</h5>";
-			$table .= '<table width="100%"  cellpadding="6" cellspacing="0"><thead><tr><th>Name</th><th>Quantity</th><th>Your customized taste</th></tr></thead>';
-			$table .= '<tbody>';
-		foreach ($_SESSION["cart_products"] as $cart_itm){	//set variables to use in content below
-			$product_name = $cart_itm["product_name"];
-			$product_qty = $cart_itm["product_quantity"];
-			$product_note = $cart_itm["product_note"];
-			$product_code = $cart_itm["product_code"];		
-			$customized_order = $cart_itm["customized_order"];
-			if ($customized_order == 1) {
-			   	$bg_color = ($b++%2==1) ? 'odd' : 'even'; //class for zebra stripe 
-			   	$table .=<<<EOT
-			   	<tr class="$bg_color">
-			   		<td>{$product_name}</td>
-					<td>{$product_qty}</td>
 			   		<td>{$product_note}</td>		   	
 			   	</tr>
 EOT;
 			}
 		}
+			// check if the first table has any content
+			if ($othello_product == 0) {
+				$table = "";
+			} elseif($othello_product == count($_SESSION["cart_products"])) {
+				// skip the if
+			}
+			else {
+				$table .= "</tbody></table><br><br>";
+				$table .= "<h5 style='text-align: center;'>Your order</h5>";
+				$table .= '<table width="100%"  cellpadding="6" cellspacing="0"><thead><tr><th>Name</th><th>Quantity</th><th>Your customized taste</th></tr></thead>';
+				$table .= '<tbody>';
+				foreach ($_SESSION["cart_products"] as $cart_itm){	//set variables to use in content below
+					$product_name = $cart_itm["product_name"];
+					$product_qty = $cart_itm["product_quantity"];
+					$product_note = $cart_itm["product_note"];
+					$product_code = $cart_itm["product_code"];		
+					$customized_order = $cart_itm["customized_order"];
+					if ($customized_order == 1) {
+						$bg_color = ($b++%2==1) ? 'odd' : 'even'; //class for zebra stripe 
+						$table .=<<<EOT
+						<tr class="$bg_color">
+						<td>{$product_name}</td>
+						<td>{$product_qty}</td>
+						<td>{$product_note}</td>		   	
+						</tr>
+EOT;
+					}
+				}
+			}
 	$table .="</tbody></table>";
 	echo $table;	
 	?>
