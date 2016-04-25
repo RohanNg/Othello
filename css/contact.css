@@ -26,17 +26,17 @@ header section
   font-size: 80px;
   font-weight: bolder;
   opacity: 1;
-  color: #878b72;
+  color: #ff7d06;
 }
 #header h4 {
   font-family: Sans-Serif;
   font-size: 30px;
   font-weight: 200;
-  color: #666;  
+  color: #5f3f40;  
 }
 #header .fa{
   font-size: 25px;
-  color: #666;
+  color: #5f3f40;
 }
 
 #header .line {
@@ -48,7 +48,7 @@ header section
 #header .line-right {
   width: 42%;
   margin-bottom: 5px;
-  border: 2px solid #666;
+  border: 2px solid #5f3f40;
   display: inline-block;
 }
 #header .line-left {
@@ -68,7 +68,7 @@ main section - left side
 }
 #main .left-side h2 {
   text-transform: uppercase;
-  color: #e7b99f;
+  color: #f60;
   font-weight: bolder;
 }
 #main .left-side ul.Oth-address li{
@@ -78,14 +78,13 @@ main section - left side
   margin-top: 20px;
 }
 
-}
 
 /* ==========================================================================
 main section - Contact
 ========================================================================== */
 #main .right-side h2 {
   text-transform: uppercase;
-  color: #878b72;
+  color: #000;
   font-size: 20px;
   font-weight: bolder;
 }
