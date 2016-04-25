@@ -4,6 +4,7 @@ include_once("config.php");
 if(empty($_SESSION["cart_products"])){
 		header('Location:products.php');		
 	}
+echo print_r($_SESSION);
 ?>
 
  <!DOCTYPE html>
@@ -38,7 +39,7 @@ if(empty($_SESSION["cart_products"])){
 			   	<tr class="$bg_color">
 			   		<td>{$product_name}</td>
 			   		<td><input type="text" size="2" maxlength="2" name="product_qty[{$product_code}]" value="{$product_qty}" /></td>
-			   		<td><input type="text" maxlength="200" name="product_note['{product_code}]" value="{$product_note}" /></td>		   	
+			   		<td><input type="text" maxlength="200" name="product_note[{$product_code}]" value="{$product_note}" /></td>		   	
 			   		<td><input type="checkbox" name="remove_code[]" value="{$product_code}" /></td>
 			   	</tr>
 EOT;
@@ -67,7 +68,7 @@ EOT;
 							<tr class="$bg_color">
 							<td>{$product_name}</td>
 							<td><input type="text" size="2" maxlength="2" name="product_qty[{$product_code}]" value="{$product_qty}" /></td>
-							<td><input type="text" maxlength="200" name="product_note['{product_code}]" value="{$product_note}" /></td>
+							<td><input type="text" maxlength="200" name="product_note[{$product_code}]" value="{$product_note}" /></td>
 							<td><input type="checkbox" name="remove_code[]" value="{$product_code}" /></td>
 							</tr>
 EOT;
