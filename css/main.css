@@ -87,7 +87,7 @@ navigation section
     background: #FF7F50;
     margin-bottom: 0;
     margin: 0 auto;
-    padding: 15px;
+    padding: 10px;
 }
 .custom-navbar .navbar-right li a {
     color: #fff;
@@ -152,7 +152,7 @@ footer {
   padding: 18px 0;
   background-color: #e87349;
   color: #fff; 
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1px;
 }
 footer .copyright {
