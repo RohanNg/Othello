@@ -241,10 +241,6 @@ EOT;
   <div class="container">
     <div class="row">
      <div class="col-md-12 col-sm-12">
-      <ul class="copyright">
-       <li>Copyright &copy; 2015</li>  
-       <li>Design by BDDNQ team</li> 
-     </ul>
      <i>Working best on Google Chrome</i>
    </div>
  </div>
