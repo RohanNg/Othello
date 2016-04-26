@@ -237,7 +237,7 @@ EOT;
 </div>
 <!-- Main section end -->
 <!-- footer section -->
-<footer>
+<footer style="margin-top: 2%">
   <div class="container">
     <div class="row">
      <div class="col-md-12 col-sm-12">
