@@ -5,7 +5,7 @@
 
 /* ================header section================= */
 #header {
-  background: url(../images/background_header-homepage.jpg) no-repeat top center;
+  background: url(../images/background_header-contact.jpg) no-repeat top center;
   background-size: cover !important;
   overflow: hidden;
   background-attachment: fixed;
@@ -23,19 +23,19 @@
 
 #header h1 {
   font-size: 80px;
-  font-weight: 600;
+  font-weight: bolder;
   opacity: 1;
-  color: #ff7d06;
+  color: #878b72;
 }
 #header h4 {
   font-family: Sans-Serif;
   font-size: 60px;
   font-weight: 200;
-  color: #5f3f40;  
+  color: #666;  
 }
 #header .fa{
   font-size: 25px;
-  color: #5f3f40;
+  color: #666;
 }
 
 #header .line {
@@ -47,7 +47,7 @@
 #header .line-right {
   width: 42%;
   margin-bottom: 5px;
-  border: 2px solid #5f3f40;
+  border: 2px solid #666;
   display: inline-block;
 }
 #header .line-left {
@@ -56,12 +56,13 @@
 #header .line-right {
   left:58%;
 }
+
 /* ================about-us section - left side====================== */
 #about-us .left-side {
   text-align: center;
 }
 #about-us .left-side h2 {
-  color: orange;
+  color:  #ffa500;
 }
 #about-us .left-side p {
   font-size: 15px;
@@ -75,12 +76,12 @@
 #about-us .line-right {
   width: 42%;
   margin-bottom: 5px;
-  border: 1px solid lightgreen;
+  border: 1px solid #90EE90;
   display: inline-block;
 }
 #about-us .fa{
   font-size: 15px;
-  color: lightgreen;
+  color: #90EE90;
 }
 #about-us .line-left {
   right:58%;
@@ -96,14 +97,10 @@
   list-style-type: none;
   font-size: 18px;
 }
-#open-hours input {
-  font-size: 18px;
+#open-hours a {
+
   margin: auto;
-  width: 100%;
-  color: orange;
-  font-weight: 800;
-  border: 5px solid lightgreen;
-  background-color: white;
+
 }
 
 /* =====================about-us section - rightside====================== */
@@ -139,7 +136,7 @@
   {
     font-family: 'Indie Flower', cursive;
     font-size: 65px;
-    color: orange;
+    color:  #ffa500;
     text-shadow: 2px 2px 4px white, 2px 2px 4px white;
   }
    #recipes h3
@@ -148,7 +145,7 @@
     font-size: 40px;
 
     color: black;
-    text-shadow: 2px 2px 4px orange, 2px 2px 4px orange;
+    text-shadow: 2px 2px 4px  #ffa500, 2px 2px 4px  #ffa500;
    }
 /* ========================our-products section================================== */
 #our-products {
@@ -201,7 +198,7 @@
   margin: auto;
 }
 #our-products .right-side h2 {
-  color: orange;
+  color:  #ffa500;
 }
 #our-products .right-side p {
   font-size: 15px;
@@ -216,12 +213,12 @@
 #our-products .line-right {
   width: 42%;
   margin-bottom: 5px;
-  border: 1px solid lightgreen;
+  border: 1px solid #90EE90;
   display: inline-block;
 }
 #our-products .fa{
   font-size: 15px;
-  color: lightgreen;
+  color: #90EE90;
 }
 #our-products .line-left {
   right:58%;
@@ -233,9 +230,9 @@
   font-size: 18px;
   margin: auto;
   width: 100%;
-  color: orange;
+  color:  #ffa500;
   font-weight: 800;
-  border: 5px solid lightgreen;
+  border: 5px solid #90EE90;
   background-color: white;
   padding: 0;
   width: 50%;
@@ -248,7 +245,7 @@
   margin: 0 30px;
 }
 #contact-info h3 {
-  color: orange;
+  color:  #ffa500;
   padding: 2% 2% 2% 6%;
 }
 #contact-info {
@@ -264,9 +261,9 @@
   font-size: 18px;
   margin: auto;
   width: 100%;
-  color: orange;
+  color:  #ffa500;
   font-weight: 800;
-  border: 5px solid lightgreen;
+  border: 5px solid #90EE90;
   background-color: white;
   width: 50%;
 }
@@ -283,6 +280,38 @@
   margin-left: 5%;
 }
 .btn {
-  background-color: lightgreen;
-  border-color: lightgreen;
+  background-color: #90EE90;
+  border-color: #90EE90;
+}
+/*=========custom button=============*/
+.custom-button
+{
+  color:  #ffa500;
+  background-color:#ffffff;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 120%;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 4px solid #90EE90;
+  margin: auto;
+
+}
+.custom-button:hover
+{
+  color: #90EE90;
+  background-color:#ffffff;
+  border-color:#ffa500;
+  text-decoration: none;
 }
