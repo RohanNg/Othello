@@ -4,7 +4,6 @@ include_once("config.php");
 if(empty($_SESSION["cart_products"])){
 		header('Location:products.php');		
 	}
-echo print_r($_SESSION);
 ?>
 
  <!DOCTYPE html>
