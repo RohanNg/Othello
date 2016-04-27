@@ -55,7 +55,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 <div class="navbar navbar-inverse navbar-fixed-top custom-navbar">
   <div class = "container">
 
-    <a href = "homepage.html" class = "navbar-brand"><img src="images/logo.png"></a>
+    <a href = "homepage.html" class = "navbar-brand"><img src="images/logo.png" alt="logo"></a>
     <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
       <span class= "icon-bar"></span>
       <span class= "icon-bar"></span>
@@ -114,7 +114,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 
     <!--Item tab content-->
 
-    <div id="tab-content" class="tab-content">
+    <div id="tab-content" class="tab-content" role="tablist">
       <?php
           $query = "SELECT * FROM cake_categories ORDER BY category_id ASC";
           $category_table = $mysqli->query($query);
@@ -165,8 +165,7 @@ EOT;
           <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10 col-sm-offset-1">
             <label for="product_note"><strong>Description of your cake</strong></label>
             <textarea class="form-control" placeholder="Please describe your cake" id="product_note" name="product_note" maxlength="400" rows="10" required></textarea>
-	        </div>
-
+	  </div>
           <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10 col-sm-offset-1">
             <input type="submit" class="send-button" value="Confirm">
           </div>
