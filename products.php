@@ -152,22 +152,21 @@ EOT;
           <input type="hidden" name="customized_order" value="1" />
           <input type="hidden" name="type" value="add" />
           <input type="hidden" name="return_url" value="{$current_url}" />
-          <div class="col-md-12 col-sm-12">
+          <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10 col-sm-offset-1">
             <label for="product_name"><strong>Cake's name:</strong></label>
             <input type="text" class="form-control" placeholder="Name of your cake..."  id="product_name" name="product_name" required />
           </div>
           
-          <div class="col-md-12 col-sm-12">
+          <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10 col-sm-offset-1">
             <label for="product_quantity"><strong>Quantity:</strong></label>
             <input type="number" class="form-control" placeholder="Number of cake you want..."  id="product_quantity" name="product_quantity" required />
           </div>
 
-          <div class="col-md-12 col-sm-12">
+          <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10 col-sm-offset-1">
             <label for="product_note"><strong>Description of your cake</strong></label>
             <input type="text" class="form-control" placeholder="Please describe your cake" id="product_note" name="product_note" maxlength="400" required />
           </div>
-
-          <div class="col-md-offset-8 col-md-4 col-sm-offset-8 col-sm-4">
+          <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10 col-sm-offset-1">
             <input type="submit" class="send-button" value="Confirm">
           </div>
         </form>
