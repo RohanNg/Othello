@@ -164,7 +164,7 @@ EOT;
 
           <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10 col-sm-offset-1">
             <label for="product_note"><strong>Description of your cake</strong></label>
-            <textarea type="text" class="form-control" placeholder="Please describe your cake" id="product_note" name="product_note" maxlength="400" rows="10" required></textarea>
+            <textarea class="form-control" placeholder="Please describe your cake" id="product_note" name="product_note" maxlength="400" rows="10" required></textarea>
 	        </div>
 
           <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10 col-sm-offset-1">
