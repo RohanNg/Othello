@@ -60,13 +60,12 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
       <span class= "icon-bar"></span>
       <span class= "icon-bar"></span>
       <span class= "icon-bar"></span>
-      <span class= "icon-bar"></span>
+
     </button>
     <div class="collapse navbar-collapse navHeaderCollapse">
 
       <ul class = "nav navbar-nav navbar-right">
               <li class="active_page"><a href="homepage.html">WELCOME</a></li>
-              <li><a href="about.html">ABOUT</a></li>
               <li><a href="products.php">PRODUCTS</a></li>
               <li><a href="contact.html">CONTACT</a></li>
               <?php  
