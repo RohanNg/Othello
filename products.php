@@ -17,6 +17,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
   <meta name="keywords" content="Othello Bakery Products" />
   <meta name="author" content=" " />
 
+  <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
