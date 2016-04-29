@@ -21,12 +21,13 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/et-line-font.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.css" >
   <link type="text/css" rel="stylesheet" href="css/products.css" />
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+  <link href="css/zoomslider.css" rel="stylesheet" type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
@@ -135,7 +136,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
                 $item_list .= <<<EOT
                   
                   <div class="col-md-4 col-xs-6" data-toggle="modal" data-target="#{$cat_obj->category_id}_{$cake_obj->product_id}">
-                    <img src="{$cake_obj->product_img_path}" alt="{$cake_obj->product_name}" width="100%"/>
+                    <img src="{$cake_obj->product_img_path}" alt="{$cake_obj->product_name}" class="img_for_product" />
                     <p>Product name: {$cake_obj->product_name}</p>
                   </div>
 EOT;
@@ -202,19 +203,19 @@ EOT;
       </div>
 
       <div class="modal-body">
-        <img src="{$cake_obj->product_img_path}" alt="{$cake_obj->product_name}" width="100%"/>
+        <img src="{$cake_obj->product_img_path}" alt="{$cake_obj->product_name}" class="img_for_product"/>
         <hr/>
-        <form role="form" method="POST" action="cart_update.php">
+        <form method="POST" action="cart_update.php">
           <input type="hidden" name="product_code" value="{$cat_obj->category_id}_{$cake_obj->product_id}" />
           <input type="hidden" name="customized_order" value="0" />
           <input type="hidden" name="type" value="add" />
           <input type="hidden" name="return_url" value="{$current_url}" />
           <input type="hidden" name="product_name" value="{$cake_obj->product_name}" />
           <div class="form-group">
-            <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Quantity</label>
-            <input type="number" class="form-control" id="psw" name="product_quantity" placeholder="How many?" />
-            <label for="note"><span class="glyphicon glyphicon-pencil"></span> If you wish specific taste for for cake, please inform us</label>
-            <input type="text" class="form-control" id="note" name="product_note" maxlength="200" placeholder="Tell me your taste" />
+            <label><span class="glyphicon glyphicon-shopping-cart"></span> Quantity</label>
+            <input type="number" class="form-control" name="product_quantity" placeholder="How many?" />
+            <label><span class="glyphicon glyphicon-pencil"></span> If you wish specific taste for for cake, please inform us</label>
+            <input type="text" class="form-control" name="product_note" maxlength="200" placeholder="Tell me your taste" />
           </div>
           <button type="submit" class="btn btn-block">Confirm
             <span class="glyphicon glyphicon-ok"></span>
@@ -246,7 +247,6 @@ EOT;
 </footer>
 <script src="js/modernizr-2.6.2.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<link href="css/zoomslider.css" rel="stylesheet">
 <script src="js/jquery.zoomslider.min.js"></script>
 <script src="js/jquery-lib.js"></script>
 <script src="js/bootstrap.min.js"></script>
