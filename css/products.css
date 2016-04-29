@@ -2,6 +2,11 @@
 	padding:0%;
   
 }
+
+.img_for_product {
+	width: 100%;
+	height: 100%;
+}
 .carousel-inner > .item > img {
       width: 100%; /* Set width to 100% */
 }
